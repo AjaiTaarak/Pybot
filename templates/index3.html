@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Learn Python</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-theme-l1">Tutorials</a>
+    
+    <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Chatbot Help</a>
+    
+    <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+  
+  </div>
+</div>
+
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Python Tutorials</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index.html">Python Chatbot</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index1.html">Python </a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index2.html">Python Syntax</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index3.html">Python Variable</a>
+</nav>
+
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Python Variable</h1>
+      <p>Variables are containers for storing data values.</p>
+      <p>Python has no command for declaring a variable.
+      A variable is created the moment you first assign a value to it.</p>
+      <p><b>Example</b></p>
+          <p> x = 5</p>
+          <p> y = "John"</p>
+          <p> print(x)</p>
+          <p> print(y)</p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center"><img src="https://www.python.org/static/opengraph-icon-200x200.png" style="height: 100px;width: 150px;"></img></p>
+      
+    </div>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Variable Names</h1>
+      <p>A variable can have a short name (like x and y) or a more descriptive name (age, carname, total_volume). Rules for Python variables:
+      A variable name must start with a letter or the underscore character
+      A variable name cannot start with a number
+      A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+      Variable names are case-sensitive (age, Age and AGE are three different variables)</p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center"><img src="https://datawider.com/wp-content/uploads/2019/11/How-to-Learn-Python.jpg" style="height: 100px;width: 150px;"></img></p>
+      
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Global variables</h1>
+      <p>Global Variables
+          Variables that are created outside of a function (as in all of the examples above) are known as global variables.
+          Global variables can be used by everyone, both inside of functions and outside.</p>
+          <p><b>Example</b></p>
+          <p> x = "awesome"</p>
+          <p> def myfunc():</p>
+          <p> print("Python is " + x)</p>
+          <p> myfunc()</p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center"></p>
+      
+    </div>
+  </div>
+
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-button w3-hover-black" href="index1.html">1</a>
+      <a class="w3-button w3-hover-black" href="index2.html">2</a>
+      <a class="w3-button w3-black" href="index3.html">3</a>
+      
+    </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>Pybot</h4>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+      <p>Project by Team Surya</a></p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+var mySidebar = document.getElementById("mySidebar");
+var overlayBg = document.getElementById("myOverlay");
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

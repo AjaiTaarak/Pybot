@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Learn Python</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="index1.html" class="w3-bar-item w3-button w3-theme-l1">Tutorials</a>
+    
+    <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Chatbot Help</a>
+    
+    <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+  
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Python Tutorials</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index.html">Python Chatbot</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index1.html">Python </a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index2.html">Python Syntax</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index3.html">Python Variable</a>
+  
+</nav>
+
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">What is Python?</h1>
+      <p>Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+
+        It is used for:
+        
+        web development (server-side),
+        software development,
+        mathematics,
+        system scripting.</p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center"><img src="https://www.python.org/static/opengraph-icon-200x200.png" style="height: 100px;width: 150px;"></img></p>
+      
+    </div>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">What can Python do?</h1>
+      <p>Python can be used on a server to create web applications.
+        Python can be used alongside software to create workflows.
+        Python can connect to database systems. It can also read and modify files.
+        Python can be used to handle big data and perform complex mathematics.
+        Python can be used for rapid prototyping, or for production-ready software development.</p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center"><img src="https://datawider.com/wp-content/uploads/2019/11/How-to-Learn-Python.jpg" style="height: 100px;width: 150px;"></img></p>
+      
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Why Python?</h1>
+      <p>Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).
+        Python has a simple syntax similar to the English language.
+        Python has syntax that allows developers to write programs with fewer lines than some other programming languages.
+        Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.
+        Python can be treated in a procedural way, an object-oriented way or a functional way.</p>
+    </div>
+    <div class="w3-third w3-container">
+      <p class="w3-border w3-padding-large w3-padding-32 w3-center"></p>
+      
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a class="w3-button w3-black" href="index1.html">1</a>
+      <a class="w3-button w3-hover-black" href="index2.html">2</a>
+      <a class="w3-button w3-hover-black" href="index3.html">3</a>
+      
+    </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h4>Pybot</h4>
+    </div>
+
+    <div class="w3-container w3-theme-l1">
+      <p>Project by Team Surya</a></p>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      body {
+    font-family: sans-serif;
+}
+
+h1 {
+    color: black;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+h3 {
+    color: black;
+    font-size: 20px;
+    margin-top: 3px;
+    text-align: center;
+}
+#chatfunction{
+    background-color: white;
+    margin-right: 10px;
+    width: 400px;
+    height: auto;
+    border: 2px solid #EF5350;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  
+}
+#topic{
+  background-color: #5afadb;
+  
+}
+#chatbox {
+    width: 400px;
+    height: 400px;
+    margin-left: 15px;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-top: 30px;
+}
+
+#userInput {
+    padding-left: 25px;
+    background-color: #5afadb;
+    padding-bottom: 15px;
+    width: 400px;
+    padding-top: 40px;
+}
+
+#textInput {
+    width: 90%;
+    border: none;
+    border-bottom: 3px solid #009688;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+#buttonInput {
+    padding: 3px;
+    font-family: monospace;
+    font-size: 17px;
+}
+
+.userText {
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: right;
+    line-height: 30px;
+}
+
+.userText span {
+    background-color: #009688;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.botText {
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+}
+
+.botText span {
+    background-color: burlywood;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+#tidbit {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 300px;
+}
+    </style>
+  </head>
+  <body>
+    <div id="chatfunction">
+      <div id="topic">
+    <h1>Python Chatbot</h1>
+    <h3>Done by team Surya</h3>
+      </div>
+    <div id="chatt">
+      <div id="chatbox">
+        <p class="botText"><span>Hi! I'm Pybot.</span></p>
+      </div>
+      <div id="userInput">
+        <input id="textInput" type="text" name="msg" placeholder="Message">
+        <input id="buttonInput" type="submit" value="Send">
+      </div>
+      <script>
+        
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            $("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          });
+          
+        }
+        $("#textInput").keypress(function(e) {
+            if ((e.which == 13) && document.getElementById("textInput").value != "" ){
+                getBotResponse();
+            }
+            var element = document.getElementById("#chatbox");
+          element.scrollTop = element.scrollHeight; 
+        });
+        $("#buttonInput").click(function() {
+            if (document.getElementById("textInput").value != "") {
+                getBotResponse();
+            }
+            var element = document.getElementById("#chatbox");
+          element.scrollTop = element.scrollHeight;
+        })
+      </script>
+    </div>
+  </div>
+  </body>
+</html>
